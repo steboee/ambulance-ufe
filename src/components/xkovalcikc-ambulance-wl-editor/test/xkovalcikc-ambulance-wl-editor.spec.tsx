@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { XkovalcikcAmbulanceWlEditor } from '../xkovalcikc-ambulance-wl-editor';
 
-describe('Xkovalcikc-ambulance-wl-editor', () => {
+describe('xkovalcikc-ambulance-wl-editor', () => {
     it('buttons shall be of different type', async () => {
         const page = await newSpecPage({
             components: [XkovalcikcAmbulanceWlEditor],
