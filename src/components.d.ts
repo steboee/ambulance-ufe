@@ -6,24 +6,84 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface XkovalcikcAmbulanceWlApp {
+        "basePath": string;
+    }
+    interface XkovalcikcAmbulanceWlEditor {
+        "entryId": string;
+    }
     interface XkovalcikcAmbulanceWlList {
     }
 }
+export interface XkovalcikcAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLXkovalcikcAmbulanceWlEditorElement;
+}
+export interface XkovalcikcAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLXkovalcikcAmbulanceWlListElement;
+}
 declare global {
+    interface HTMLXkovalcikcAmbulanceWlAppElement extends Components.XkovalcikcAmbulanceWlApp, HTMLStencilElement {
+    }
+    var HTMLXkovalcikcAmbulanceWlAppElement: {
+        prototype: HTMLXkovalcikcAmbulanceWlAppElement;
+        new (): HTMLXkovalcikcAmbulanceWlAppElement;
+    };
+    interface HTMLXkovalcikcAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLXkovalcikcAmbulanceWlEditorElement extends Components.XkovalcikcAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLXkovalcikcAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLXkovalcikcAmbulanceWlEditorElement, ev: XkovalcikcAmbulanceWlEditorCustomEvent<HTMLXkovalcikcAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLXkovalcikcAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLXkovalcikcAmbulanceWlEditorElement, ev: XkovalcikcAmbulanceWlEditorCustomEvent<HTMLXkovalcikcAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLXkovalcikcAmbulanceWlEditorElement: {
+        prototype: HTMLXkovalcikcAmbulanceWlEditorElement;
+        new (): HTMLXkovalcikcAmbulanceWlEditorElement;
+    };
+    interface HTMLXkovalcikcAmbulanceWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLXkovalcikcAmbulanceWlListElement extends Components.XkovalcikcAmbulanceWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLXkovalcikcAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLXkovalcikcAmbulanceWlListElement, ev: XkovalcikcAmbulanceWlListCustomEvent<HTMLXkovalcikcAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLXkovalcikcAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLXkovalcikcAmbulanceWlListElement, ev: XkovalcikcAmbulanceWlListCustomEvent<HTMLXkovalcikcAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLXkovalcikcAmbulanceWlListElement: {
         prototype: HTMLXkovalcikcAmbulanceWlListElement;
         new (): HTMLXkovalcikcAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "xkovalcikc-ambulance-wl-app": HTMLXkovalcikcAmbulanceWlAppElement;
+        "xkovalcikc-ambulance-wl-editor": HTMLXkovalcikcAmbulanceWlEditorElement;
         "xkovalcikc-ambulance-wl-list": HTMLXkovalcikcAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface XkovalcikcAmbulanceWlApp {
+        "basePath"?: string;
+    }
+    interface XkovalcikcAmbulanceWlEditor {
+        "entryId"?: string;
+        "onEditor-closed"?: (event: XkovalcikcAmbulanceWlEditorCustomEvent<string>) => void;
+    }
     interface XkovalcikcAmbulanceWlList {
+        "onEntry-clicked"?: (event: XkovalcikcAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
+        "xkovalcikc-ambulance-wl-app": XkovalcikcAmbulanceWlApp;
+        "xkovalcikc-ambulance-wl-editor": XkovalcikcAmbulanceWlEditor;
         "xkovalcikc-ambulance-wl-list": XkovalcikcAmbulanceWlList;
     }
 }
@@ -31,6 +91,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "xkovalcikc-ambulance-wl-app": LocalJSX.XkovalcikcAmbulanceWlApp & JSXBase.HTMLAttributes<HTMLXkovalcikcAmbulanceWlAppElement>;
+            "xkovalcikc-ambulance-wl-editor": LocalJSX.XkovalcikcAmbulanceWlEditor & JSXBase.HTMLAttributes<HTMLXkovalcikcAmbulanceWlEditorElement>;
             "xkovalcikc-ambulance-wl-list": LocalJSX.XkovalcikcAmbulanceWlList & JSXBase.HTMLAttributes<HTMLXkovalcikcAmbulanceWlListElement>;
         }
     }
