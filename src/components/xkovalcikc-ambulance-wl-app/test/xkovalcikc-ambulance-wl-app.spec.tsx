@@ -10,7 +10,7 @@ describe('xkovalcikc-ambulance-wl-app', () => {
         });
         page.win.navigation = new EventTarget();
         const child = await page.root.shadowRoot.firstElementChild;
-        expect(child.tagName.toLocaleLowerCase()).toEqual('Xkovalcikc-ambulance-wl-editor');
+        expect(child.tagName.toLocaleLowerCase()).toEqual('xkovalcikc-ambulance-wl-editor');
     });
 
     it('renders list', async () => {
