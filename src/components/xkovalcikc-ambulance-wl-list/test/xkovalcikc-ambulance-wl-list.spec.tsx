@@ -51,7 +51,7 @@ describe('xkovalcikc-ambulance-wl-list', () => {
         mock.onGet().networkError();
         const page = await newSpecPage({
             components: [XkovalcikcAmbulanceWlList], //
-            html: `<pfx-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></pfx-ambulance-wl-list>`, //
+            html: `<xkovalcikc-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></-ambulance-wl-list>`, //
         });
 
         const wlList = page.rootInstance as XkovalcikcAmbulanceWlList; //
