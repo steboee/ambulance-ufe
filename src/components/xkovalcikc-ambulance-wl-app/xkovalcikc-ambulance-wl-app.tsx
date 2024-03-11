@@ -13,8 +13,9 @@ declare global {
 })
 export class XkovalcikcAmbulanceWlApp {
     @State() private relativePath = '';
-
     @Prop() basePath: string = '';
+    @Prop() apiBase: string;
+    @Prop() ambulanceId: string;
 
     componentWillLoad() {
         const baseUri = new URL(this.basePath, document.baseURI || '/').pathname;
@@ -56,7 +57,11 @@ export class XkovalcikcAmbulanceWlApp {
                 {element === 'editor' ? (
                     <xkovalcikc-ambulance-wl-editor entry-id={entryId} oneditor-closed={() => navigate('./list')}></xkovalcikc-ambulance-wl-editor>
                 ) : (
-                    <xkovalcikc-ambulance-wl-list onentry-clicked={(ev: CustomEvent<string>) => navigate('./entry/' + ev.detail)}></xkovalcikc-ambulance-wl-list>
+                    <xkovalcikc-ambulance-wl-list
+                        ambulance-id={this.ambulanceId}
+                        api-base={this.apiBase}
+                        onentry-clicked={(ev: CustomEvent<string>) => navigate('./entry/' + ev.detail)}
+                    ></xkovalcikc-ambulance-wl-list>
                 )}
             </Host>
         );
