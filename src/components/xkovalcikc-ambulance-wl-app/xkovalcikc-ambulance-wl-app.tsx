@@ -55,7 +55,12 @@ export class XkovalcikcAmbulanceWlApp {
         return (
             <Host>
                 {element === 'editor' ? (
-                    <xkovalcikc-ambulance-wl-editor entry-id={entryId} oneditor-closed={() => navigate('./list')}></xkovalcikc-ambulance-wl-editor>
+                    <xkovalcikc-ambulance-wl-editor
+                        entry-id={entryId}
+                        ambulance-id={this.ambulanceId}
+                        api-base={this.apiBase}
+                        oneditor-closed={() => navigate('./list')}
+                    ></xkovalcikc-ambulance-wl-editor>
                 ) : (
                     <xkovalcikc-ambulance-wl-list
                         ambulance-id={this.ambulanceId}
