@@ -39,6 +39,7 @@ export class XkovalcikcAmbulanceWlApp {
         toRelative(location.pathname);
     }
     render() {
+        console.debug('xkovalcikc-ambulance-wl-app.render() - path: %s', this.relativePath);
         let element = 'list';
         let entryId = '@new';
 
